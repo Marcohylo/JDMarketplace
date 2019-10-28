@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  car_make: MyString
+  price: 
+  colour: 1
+  model_year: 1
+  engine: MyString
+  top_speed: 1
+  features: MyText
+  transmission: 1
+  condition: MyText
+  location: MyString
+  category: one
+
+two:
+  car_make: MyString
+  price: 
+  colour: 1
+  model_year: 1
+  engine: MyString
+  top_speed: 1
+  features: MyText
+  transmission: 1
+  condition: MyText
+  location: MyString
+  category: two
