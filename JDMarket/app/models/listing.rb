@@ -1,7 +1,11 @@
 class Listing < ApplicationRecord
   belongs_to :category
   belongs_to :user 
+<<<<<<< Updated upstream
   mount_uploader :image, ImageUploader
+=======
+  # mount_uploader :image, ImageUploader
+>>>>>>> Stashed changes
 
   validates :car_make, :price, :colour, :model_year, :engine, :top_speed, :features, :transmission, :condition, :location, :category_id, presence: true 
 
