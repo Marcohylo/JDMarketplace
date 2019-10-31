@@ -1,0 +1,130 @@
+  
+<div class="columns">
+  <div class="column is-8 is-centered">
+
+    <%= simple_form_for @listing, html: { multipart: true } do |f| %>
+      <%= f.error_notification %>
+
+        <div class="columns">
+
+          <div class="field column">
+            <div class="control">
+              <%= f.input :price, required: true, input_html: { class: "input"}, wrapper: false, label_html: { class:"label" } %>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <%= f.input :model_year, required: true, input_html: { class:"input" }, wrapper: false, label_html: { class:"label" } %>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <%= f.input :engine, required: true, input_html: { class:"textarea" }, wrapper: false, label_html: { class:"label" } %>
+          </div>
+        </div>
+
+         <div class="field">
+            <div class="control">
+              <%= f.input :top_speed, required: true, input_html: { class: "input"}, wrapper: false, label_html: { class:"label" } %>
+            </div>
+          </div>
+
+        </div>
+        <div class="field">
+            <div class="control">
+              <%= f.input :colour, required: true, input_html: { class: "input"}, wrapper: false, label_html: { class:"label" } %>
+            </div>
+          </div>
+
+        </div>
+
+        </div>
+
+        <div class="field">
+            <div class="control">
+              <%= f.input :features, required: true, input_html: { class: "input"}, wrapper: false, label_html: { class:"label" } %>
+            </div>
+          </div>
+
+        </div>
+
+       <div class="field">
+            <div class="control">
+              <%= f.input :transmission, required: true, input_html: { class: "input"}, wrapper: false, label_html: { class:"label" } %>
+            </div>
+          </div>
+
+        </div>
+
+       <div class="field">
+            <div class="control">
+              <%= f.input :location, required: true, input_html: { class: "input"}, wrapper: false, label_html: { class:"label" } %>
+            </div>
+          </div>
+
+        </div>
+
+     
+        <div class="columns">
+          <div class="field column is-4">
+            <div class="control">
+              <label class="label">CAR_MAKE</label>
+              <div class="control has-icons-left">
+                <span class="select">
+                  <%= f.input_field :car_make, collection: Listing::CAR_MAKE, prompt: "Select car make" %>
+                </span>
+                <span class="icon is-small is-left">
+                  <i class="fa fa-tag"></i>
+                </span>
+              </div>
+            </div>
+           </div>
+         
+
+          <div class="field column is-4">
+            <div class="control">
+              <label class="label">CONDITION</label>
+              <div class="control has-icons-left">
+                <span class="select">
+                  <%= f.input_field :condition, collection: Listing::CONDITION, prompt: "Select condition" %>
+                </span>
+                <span class="icon is-small is-left">
+                  <i class="fa fa-paint-brush"></i>
+                </span>
+              </div>
+            </div>
+           </div>
+
+        
+
+        <div class="field">
+          <div class="control">
+            <label class="label">Add images</label>
+              <div class="file">
+              <label class="file-label">
+                <%= f.input :image, as: :file, input_html: { class:"file-input listing-image" }, label: false, wrapper: false %>
+                  <span class="file-cta">
+                    <span class="file-icon"><i class="fa fa-upload"></i></span>
+                    <span class="file-label">Choose a file…</span>
+                  </span>
+              </label>
+              </div>
+            </div>
+          </div>
+          <output id="list"></output>
+        <hr />
+
+        <div class="field is-grouped">
+          <div class="control">
+            <%= f.button :submit, class: 'button is-warning' %>
+            <%= link_to 'Cancel', listings_path, class:'button is-light' %>
+          </div>
+        </div>
+
+      <% end %>
+  </div>
+</div>

@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< Updated upstream
-ActiveRecord::Schema.define(version: 2019_10_29_045204) do
-=======
-ActiveRecord::Schema.define(version: 2019_10_31_044845) do
->>>>>>> Stashed changes
+ActiveRecord::Schema.define(version: 2019_10_31_061956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,7 +45,7 @@ ActiveRecord::Schema.define(version: 2019_10_31_044845) do
   create_table "listings", force: :cascade do |t|
     t.string "car_make", null: false
     t.bigint "price", null: false
-    t.integer "colour", null: false
+    t.string "colour", null: false
     t.integer "model_year", null: false
     t.string "engine", null: false
     t.integer "top_speed", null: false
@@ -62,6 +58,7 @@ ActiveRecord::Schema.define(version: 2019_10_31_044845) do
     t.datetime "updated_at", null: false
     t.string "image"
     t.integer "user_id"
+    t.string "description"
     t.index ["category_id"], name: "index_listings_on_category_id"
   end
 
@@ -97,11 +94,8 @@ ActiveRecord::Schema.define(version: 2019_10_31_044845) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-<<<<<<< Updated upstream
-=======
     t.integer "role"
     t.json "avatars"
->>>>>>> Stashed changes
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
