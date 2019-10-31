@@ -3,7 +3,7 @@ class CreateListings < ActiveRecord::Migration[5.2]
     create_table :listings do |t|
       t.string :car_make, null: false
       t.bigint :price, null: false
-      t.integer :colour, null: false
+      t.string :colour, null: false
       t.integer :model_year, null: false
       t.string :engine, null: false
       t.integer :top_speed, null: false

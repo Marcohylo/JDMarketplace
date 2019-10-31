@@ -23,14 +23,14 @@
 }
  html{
   min-height: 100%;
-  overflow: hidden;
+  background-color: rgb(12, 12, 12)
 }
 body{
-  height: calc(100vh);
+  min-height: 100%;
   padding: 4em;
-  color: rgba(255,255,255,.75);
+  color: rgba(224, 40, 40, 0.75);
   font-family: 'Anonymous Pro', monospace;  
-  background-color: rgb(25,25,25);
+  background-color: rgb(12, 12, 12);
 }
 .customnavbar {
 background-color: black;}

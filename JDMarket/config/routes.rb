@@ -4,8 +4,7 @@ Rails.application.routes.draw do
     registrations: 'registrations'
   }
   
-  
-  # get "/", to: "pages#home", as: "root"
+  resources :listings
   
   # get "/listings", to: "listings#index", as: "listings"
   # post "/listings", to: "listings#create"
@@ -16,5 +15,5 @@ Rails.application.routes.draw do
   # delete "/listings/:id", to: "listings#destroy"
   # get "/listings/:id/edit", to: "listings#edit", as: "edit_listing"
 
-  # get "*path", to: "pages#not_found"
+  get "*path", to: "pages#not_found"
 end

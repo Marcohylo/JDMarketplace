@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Car make:</strong>
+  <%= @listing.car_make %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @listing.price %>
+</p>
+
+<p>
+  <strong>Colour:</strong>
+  <%= @listing.colour %>
+</p>
+
+<p>
+  <strong>Model year:</strong>
+  <%= @listing.model_year %>
+</p>
+
+<p>
+  <strong>Engine:</strong>
+  <%= @listing.engine %>
+</p>
+
+<p>
+  <strong>Top speed:</strong>
+  <%= @listing.top_speed %>
+</p>
+
+<p>
+  <strong>Features:</strong>
+  <%= @listing.features %>
+</p>
+
+<p>
+  <strong>Transmission:</strong>
+  <%= @listing.transmission %>
+</p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @listing.condition %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @listing.location %>
+</p>
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>
