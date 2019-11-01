@@ -1,24 +1,38 @@
  @import "bulma";
 
  .titlebar {
-    color: red;
+    color:white;
     text-shadow: 0 0 3px #FF0000;
     font-size: 30px
 }
  html{
   min-height: 100%;
-  background-color: rgb(12, 12, 12)
+  background-color: #1A1A1D; 
 }
 body{
   min-height: 100%;
   padding: 4em;
-  color: rgba(224, 40, 40, 0.75);
+  color:whitesmoke;
   font-family: 'Anonymous Pro', monospace;  
-  background-color: rgb(12, 12, 12);
+  background:#1A1A1D;
 }
 .customnavbar {
-background-color: black;}
+background-color:black;
+}
 
 .hover{
-background-color: black;
+background-color:black;
+}
+
+.listing-class {
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.listing-class-item {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  align-items: flex-end;
 }
