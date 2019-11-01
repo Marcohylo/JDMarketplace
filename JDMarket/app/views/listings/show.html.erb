@@ -50,5 +50,10 @@
   <%= @listing.location %>
 </p>
 
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag @listing.picture.service_url if @listing.picture.attached?  %>
+</p>
+
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>

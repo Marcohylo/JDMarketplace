@@ -66,6 +66,12 @@
     <%= form.select :category_id, Category.all.collect{|c|[c.car_type,c.id]} %>
   </div>
 
+  <div class="field">
+    <%= form.label :picture %>
+    <%= form.file_field :picture, accept:
+  'image/png,image/gif,image/jpeg,image/jpg,image/PNG' %>
+  </div>
+
 
 
   <div class="actions">
