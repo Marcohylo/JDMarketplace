@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  root 'store#index'
+  resources :line_items
+  resources :carts
+  resources :listings
+ 
   devise_for :users, controllers: {
     registrations: 'registrations'
   }
+   root 'listings#index'
   
-  resources :listings
   
   # get "/listings", to: "listings#index", as: "listings"
   # post "/listings", to: "listings#create"
