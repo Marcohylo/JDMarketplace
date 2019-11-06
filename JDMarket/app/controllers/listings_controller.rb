@@ -8,6 +8,8 @@ class ListingsController < ApplicationController
     # GET /listings.json
     def index
       @listings = Listing.all
+      @q = Listing.ransack(params[:q])
+      @people = @q.result(distinct: true)
     end
   
     # GET /listings/1
