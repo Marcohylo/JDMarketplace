@@ -31,7 +31,7 @@ class ListingsController < ApplicationController
       respond_to do |format|
         if @listing.save
           format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
-          format.json { render :show, status: :created, location: @listing }
+          format.json { render :show, status: :created, location: @listing  }
         else
           format.html { render :new }
           format.json { render json: @listing.errors, status: :unprocessable_entity }
@@ -71,7 +71,7 @@ class ListingsController < ApplicationController
   
       # Never trust parameters from the scary internet, only allow the white list through.
       def listing_params
-        params.require(:listing).permit(:car_make, :price, :colour, :model_year, :engine, :top_speed, :features, :transmission, :condition, :location,:category_id, :user_id, :picture)
+        params.require(:listing).permit(:car_make, :price, :colour, :model_year, :engine, :top_speed, :features, :transmission, :condition, :location,:category_id, :user_id, :picture, :description)
       end
   end
   
