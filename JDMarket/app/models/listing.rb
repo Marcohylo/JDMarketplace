@@ -4,6 +4,7 @@ class Listing < ApplicationRecord
   belongs_to :category
   has_many_attached :pictures
   has_many :line_items
+  has_one :user
 
 
   validates :car_make, :price, :colour, :model_year, :engine, :top_speed, :features, :transmission, :condition, :location, :category_id, presence: true 

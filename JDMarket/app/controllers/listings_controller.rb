@@ -1,6 +1,8 @@
 class ListingsController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_listing, only: [:show, :edit, :update, :destroy]
+    before_action :set_listing, only: [:show]
+    before_action :set_user_listing, only: [:edit, :update, :destroy]
+    
   
     # GET /listings
     # GET /listings.json
@@ -27,7 +29,7 @@ class ListingsController < ApplicationController
     def create
       @listing = Listing.new(listing_params)
       @listing.user_id = current_user.id
-      byebug
+
       respond_to do |format|
         if @listing.save
           format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
@@ -73,8 +75,19 @@ class ListingsController < ApplicationController
       def listing_params
         params.require(:listing).permit(:car_make, :price, :colour, :model_year, :engine, :top_speed, :features, :transmission, :condition, :location,:category_id, :user_id, :description, pictures: [])
       end
+
+      def set_user_listing
+        id = params[:id]
+        @listing = current_user.listings.find_by_id(id)
+    
+        if @listing == nil
+            redirect_to listings_path
+        end
+      end
+
   end
   
+      
   
   # class ListingsController < ApplicationController
 #     def index
