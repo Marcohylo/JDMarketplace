@@ -52,7 +52,9 @@
 
 <p>
   <strong>Picture:</strong>
-  <%= image_tag @listing.picture.service_url if @listing.picture.attached?  %>
+  <% @listing.pictures.each do |picture| %>
+  <%= image_tag picture.service_url%>
+  <% end %>
 </p>
 
 <p>

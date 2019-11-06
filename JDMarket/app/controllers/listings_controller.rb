@@ -27,7 +27,7 @@ class ListingsController < ApplicationController
     def create
       @listing = Listing.new(listing_params)
       @listing.user_id = current_user.id
-  
+      byebug
       respond_to do |format|
         if @listing.save
           format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
@@ -71,9 +71,10 @@ class ListingsController < ApplicationController
   
       # Never trust parameters from the scary internet, only allow the white list through.
       def listing_params
-        params.require(:listing).permit(:car_make, :price, :colour, :model_year, :engine, :top_speed, :features, :transmission, :condition, :location,:category_id, :user_id, :picture, :description)
+        params.require(:listing).permit(:car_make, :price, :colour, :model_year, :engine, :top_speed, :features, :transmission, :condition, :location,:category_id, :user_id, :description, pictures: [])
       end
   end
+  
   
   # class ListingsController < ApplicationController
 #     def index

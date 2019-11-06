@@ -68,7 +68,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :picture %> <%= form.file_field :picture, accept:
+    <%= form.label :pictures %>
+    <%= form.file_field :pictures, multiple: true, accept:
     'image/png,image/gif,image/jpeg,image/jpg' %><br>
   </div>
 
