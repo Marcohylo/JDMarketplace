@@ -7,7 +7,7 @@ class CreateUserInfos < ActiveRecord::Migration[5.2]
       t.string :first_name
       t.string :last_name
       t.bigint :phone_number
-      t.boolean :admin
+      t.boolean :admin, default:false
       t.references :user, foreign_key: true
 
       t.timestamps
