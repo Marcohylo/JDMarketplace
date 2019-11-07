@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   }
   #  root 'listings#index'
   root 'pages#index'
+  get '/buy', to: 'pages#buy'
+
+  post '/listings', to: 'listings#create'
 
   # get "/listings", to: "listings#index", as: "listings"
   # post "/listings", to: "listings#create"

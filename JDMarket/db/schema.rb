@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_07_041617) do
+ActiveRecord::Schema.define(version: 2019_11_07_062303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,10 +71,10 @@ ActiveRecord::Schema.define(version: 2019_11_07_041617) do
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image"
-    t.integer "user_id"
     t.string "description"
+    t.bigint "user_id"
     t.index ["category_id"], name: "index_listings_on_category_id"
+    t.index ["user_id"], name: "index_listings_on_user_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 2019_11_07_041617) do
     t.string "first_name"
     t.string "last_name"
     t.bigint "phone_number"
-    t.boolean "admin"
+    t.boolean "admin", default: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -108,10 +108,9 @@ ActiveRecord::Schema.define(version: 2019_11_07_041617) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
     t.integer "role"
-    t.json "avatars"
     t.boolean "admin", default: false
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -120,6 +119,7 @@ ActiveRecord::Schema.define(version: 2019_11_07_041617) do
   add_foreign_key "line_items", "carts"
   add_foreign_key "line_items", "listings"
   add_foreign_key "listings", "categories"
+  add_foreign_key "listings", "users"
   add_foreign_key "orders", "users"
   add_foreign_key "user_infos", "users"
 end
