@@ -7,11 +7,15 @@ class Ability
       user ||= User.new # guest user (not logged in)
       if user.admin?
         can :manage, :all
+        can :edit, :all
+        can :destroy, :all 
+        can :access, :all
+        can :read, :all
       else
         can :edit, Listing do |listing|
           listing.user == user
         end 
-        can :destroy, Article do |listing|
+        can :destroy, Listing do |listing|
           listing.user == user 
         end 
         can :create, Listing 
