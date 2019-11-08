@@ -32,8 +32,6 @@
 <% @listings = Listing.all %>
 
 <% @listings.each do |listing|%>
-<% if current_user %>
-<% if listing.user_id == current_user.id %>
   <tr class="listing-row">
     <div class= colour>
     <td><%= listing.car_make %></td>
@@ -55,21 +53,16 @@
         <td><%= listing.condition %></td>
 
         <td><%= listing.location %></td>
-</div>
-    <% if current_user %>
-      <% if current_user.admin? || current_user.id == listing.user_id %>
-    <td><%= link_to 'Show', listing %></td>
+
+       <td><%= link_to 'Show', listing %></td>
         <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
         <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-         </tr>   
+      </tr>  
+  </tr>   
+    </tr>
     <% end %>
-    <% end %>
-<% end %>
-<% end %>
-</tbody>
-<% end %>
+  </tbody>
 </table>
+
 </div>
-
-
-<%= link_to 'New Listing', new_listing_path %>
+<%= link_to 'New Listing', new_listing_path %> 
