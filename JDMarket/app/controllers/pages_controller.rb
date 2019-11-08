@@ -18,10 +18,6 @@ class PagesController < ApplicationController
 
     end 
     
-    
-
-
-
     private
 
     def listing_params

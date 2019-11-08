@@ -18,7 +18,7 @@
   <%= form.label :transmission %><br>
   <% Listing.transmissions.keys.each do |s| %>
     <%= form.label s  %>
-    <%= form.radio_button :sex, s %>
+    <%= form.radio_button :transmission, s %>
 
   <% if s == listing.transmission %>
     <% form.radio_button :transmission, :checked => true %>
