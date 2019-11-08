@@ -5,6 +5,10 @@ class ListingsController < ApplicationController
     before_action :set_listing, only: [:show]
     before_action :set_user_listing, only: [:edit, :update, :destroy]
     
+    def order
+      puts "here is params"
+      puts params
+    end
   
     # GET /listings
     # GET /listings.json
@@ -94,37 +98,3 @@ class ListingsController < ApplicationController
   
       
   
-  # class ListingsController < ApplicationController
-#     def index
-#         @listings = Listing.all
-#     end
-
-#     def show
-#         id = params[:id]
-#         @listing = Listing.find(id)
-#     end
-
-#     def new
-#     end
-
-#     def create
-#         #finish logic for creating a record
-#     end
-
-#     def edit
-#         id = params[:id]
-#         @listing = Listing.find(id)
-#     end
-
-#     def update
-#         id = params[:id]
-#         @listing = Listing.find(id)
-#         #finsih logic for updating the record
-#     end
-
-#     def destroy
-#         id = params[:id]
-#         @listing = Listing.find(id)
-#         #finish logic for deleting the record
-#     end
-# end
