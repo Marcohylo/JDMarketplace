@@ -1,17 +1,11 @@
-<%= stylesheet_link_tag "index" %>
+
 <p id="notice"><%= notice %></p>
 
+
 <h1>Listings</h1>
-
-<p>You are currently logged in as <strong><%= current_user.email %></strong></p>
-
 <%= render "searchbar" %> 
 
-<div class="user-listing-heading">
-
-</div>
-<div class="listing-table">
-<table id="listing">
+<table>
   <thead>
     <tr>
       <th>Car make</th>
@@ -27,16 +21,11 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-<tbody>
-
-<% @listings = Listing.all %>
-
-<% @listings.each do |listing|%>
-<% if current_user %>
-<% if listing.user_id == current_user.id %>
-  <tr class="listing-row">
-    <div class= colour>
-    <td><%= listing.car_make %></td>
+  <tbody>
+  
+    <% @listings.each do |listing| %>
+      <tr>
+        <td><%= listing.car_make %></td>
         
         <td><%= listing.price %></td>
 
@@ -55,21 +44,17 @@
         <td><%= listing.condition %></td>
 
         <td><%= listing.location %></td>
-</div>
-    <% if current_user %>
-      <% if current_user.admin? || current_user.id == listing.user_id %>
-    <td><%= link_to 'Show', listing %></td>
+        
+        <td><%= link_to 'Show', listing %></td>
         <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
         <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-         </tr>   
+      </tr>
     <% end %>
-    <% end %>
-<% end %>
-<% end %>
-</tbody>
-<% end %>
+  </tbody>
 </table>
-</div>
+
+<br>
+
 
 
 <%= link_to 'New Listing', new_listing_path %>

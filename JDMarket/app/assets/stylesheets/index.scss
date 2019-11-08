@@ -1,3 +1,27 @@
-// Place all the styles related to the index controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: #a9a9a9;
+    
+  }
+.th, td {
+    padding: 15px;
+  }
+.th {
+    text-align: left;
+    color: black;
+  }
+.table {
+    border-spacing: 5px;
+    border-radius: 5px;
+  }
+.listing-table, .listing-all {
+    padding: 15px;
+  }
+.user-listing-heading, .all-listings-heading {
+    text-align: center;
+  }
+
+.colour {
+    color: black;
+}
