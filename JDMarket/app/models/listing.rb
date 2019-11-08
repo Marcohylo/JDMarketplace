@@ -10,7 +10,7 @@ class Listing < ApplicationRecord
   validates :car_make, :price, :colour, :model_year, :engine, :top_speed, :features, :transmission, :condition, :location, :category_id, presence: true 
 
   validates :description, length: { maximum: 1000, too_long: "%{count} characters is the maximum allowed."}
-  validates :price, numericality: { only_integers: true }
+  validates :price, numericality: true
 
   private 
 
