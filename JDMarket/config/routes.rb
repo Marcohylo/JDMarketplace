@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   }
   #  root 'listings#index'
   root 'pages#index'
-  get '/order', to: 'listings#order'
+  get '/order', to: 'orders#order'
 
   post '/listings', to: 'listings#create'
 
