@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   get '/order', to: 'orders#order'
 
   post '/listings', to: 'listings#create'
+  get "/payments/success", to: "payments#success"
+  get "*path", to: "pages#not_found"
+end
+
 
   # get "/listings", to: "listings#index", as: "listings"
   # post "/listings", to: "listings#create"
@@ -19,6 +23,3 @@ Rails.application.routes.draw do
   # patch "/listings/:id", to: "listings#update"
   # delete "/listings/:id", to: "listings#destroy"
   # get "/listings/:id/edit", to: "listings#edit", as: "edit_listing"
-
-  get "*path", to: "pages#not_found"
-end

@@ -2,14 +2,9 @@ class ListingsController < ApplicationController
     load_and_authorize_resource
     skip_authorize_resource :only => :show 
     before_action :authenticate_user!
-    before_action :set_listing, only: [:show]
+    before_action :set_listing, only: [:show, :order]
     before_action :set_user_listing, only: [:edit, :update, :destroy]
     
-    def order
-      puts "here is params"
-      puts params
-    end
-  
     # GET /listings
     # GET /listings.json
     def index
@@ -17,16 +12,35 @@ class ListingsController < ApplicationController
       @q = Listing.ransack(params[:q])
       @listings = @q.result(distinct: true)
     end
-  
-    # GET /listings/1
-    # GET /listings/1.json
-    def show
-    end
-  
+
     # GET /listings/new
     def new
       @listing = Listing.new
     end
+
+    def show
+      session = Stripe::Checkout::Session.create(
+          payment_method_types: ['card'],
+          customer_email: current_user.email,
+          line_items: [{
+              name: @listing.car_make,
+              description: @listing.description,
+              amount: @listing.price * 100,
+              currency: 'aud',
+              quantity: 1,
+          }],
+          payment_intent_data: {
+              metadata: {
+                  user_id: current_user.id,
+                  listing_id: @listing.id
+              }
+          },
+          success_url: "#{root_url}payments/success?userId=#{current_user.id}&listingId=#{@listing.id}",
+          cancel_url: "#{root_url}listings"
+      )
+  
+      @session_id = session.id
+  end
   
     # GET /listings/1/edit
     def edit
@@ -96,5 +110,4 @@ class ListingsController < ApplicationController
 
   end
   
-      
   
