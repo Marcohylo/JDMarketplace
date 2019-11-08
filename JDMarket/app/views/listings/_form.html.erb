@@ -13,6 +13,20 @@
 <div class="listing-class-item">
 <%= form_with(model: listing, local: true) do |form| %>
 
+ 
+<div class="field">>
+  <%= form.label :transmission %><br>
+  <% Listing.transmissions.keys.each do |s| %>
+    <%= form.label s  %>
+    <%= form.radio_button :sex, s %>
+
+  <% if s == listing.transmission %>
+    <% form.radio_button :transmission, :checked => true %>
+    <% end %>
+  <% end %>
+</div>
+
+
 <div class="field">
 <%= form.label :car_make %><br>
 <%= form.select :car_make, options_for_select(["Mazda","Toyota","Mitsubishi","Subaru","Honda","Nissan","Suzuki"],"Mazda") %><br>
@@ -43,13 +57,7 @@
     <%= form.label :price %><br>
     <%= form.text_field :price %><br>
   </div>
-
-<div class="field">
-    <%= form.label :transmission %><br>
-    <%= form.number_field :transmission %><br>
-  </div>
  
-
   <div class="field">
     <%= form.label :engine %><br>
     <%= form.text_field :engine %><br>
