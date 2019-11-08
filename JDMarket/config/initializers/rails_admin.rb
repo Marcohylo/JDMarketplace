@@ -1,6 +1,9 @@
-
 RailsAdmin.config do |config|
-
+  config.authorize_with do |controller|
+    unless current_user && current_user.admin?
+      redirect_to main_app.root_path, error: "Access Denied"
+    end
+  end
   ### Popular gems integration
 
   ## == Devise ==

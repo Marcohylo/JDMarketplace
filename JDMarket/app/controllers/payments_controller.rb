@@ -5,8 +5,7 @@ class PaymentsController < ApplicationController
     params
     @listing = Listing.find(params[:listingId])
         @listing.destroy
-    raise
-
+    
     end
 
 end

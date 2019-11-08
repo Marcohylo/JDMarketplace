@@ -37,14 +37,17 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="field is-grouped">
-            
-            <% if current_user.admin? %>
+
+          
+            <% if user_signed_in? %>
+             <% if current_user.admin? %>
                 <%= link_to 'Admin', rails_admin.index_path(:model_name => 'user'), class: "navbar-item" %>
                 </div>
               </div>
+
+            <% end %>
+
             
-             <% end %>
-            <% if user_signed_in? %>
               <%= link_to "Listings", listings_path, class:"navbar-item custombutton"%>
               <%= link_to 'List JDM', new_listing_path, class: "navbar-item" %>
               
@@ -63,7 +66,8 @@
             <%= link_to "Sign up", new_user_registration_path, class:"navbar-item custombutton"%>
             
             <% end %>
-
+            
+             
             </div>
           </div>
         </div>

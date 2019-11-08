@@ -1,6 +1,6 @@
 class Listing < ApplicationRecord
   
-  before_destroy :not_referenced_by_any_line_item
+  # before_destroy :not_referenced_by_any_line_item
   belongs_to :category, required: false
   has_many_attached :pictures
   has_one :user
