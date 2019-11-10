@@ -34,7 +34,7 @@ JDMarket is a marketplace website that consists and is made up of several databa
 
 **Sitemap**
 
-![Sitemap](images/)
+![Sitemap](Images/adminsitemap.png)
 
 **Screenshots**
 
