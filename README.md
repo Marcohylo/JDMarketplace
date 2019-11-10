@@ -10,7 +10,7 @@ Despite the worldwide popularity in JDMs, there are still no well known dedicate
 
 A link to the web app is listed below.
 
-http://remembertoentertheurlhere.com
+https://thawing-escarpment-15469.herokuapp.com/
 
 **A link to your GitHub repository (repo).**
 
@@ -30,18 +30,18 @@ https://github.com/Marcohylo
 The purpose of JDMarket is to provide the Australian public a platform where users can make/view listings of various JDM cars within Australia. In addition to this, JDMarket tries its best to provide a friendly user interface. 
 
 **Functionality / features**
-JDMarket is a marketplace website that consists and is made up of several databases. It also features a user creation option, which allows viewers of the website to create their own "user" before making their own listings.
+JDMarket is a marketplace website that consists and is made up of several databases. It also features a user creation option, which allows viewers of the website to create their own "user" before making their own listings. There is also an admin dashboard that is only accessible if the user is confirmed to be an administrator account, and it allows edits and changes to be made to other users or listings from it. In addition to this, payment through stripe has also been enabled. 
 
 **Sitemap**
 
-TO BE ADDED
+![Sitemap](images/)
 
 **Screenshots**
 
 TO BE ADDED
 
 **Target audience**
-JDMarket is made for car enthusiasts in mind, but it is definitely not just restricted to them. Anyone that has a JDM in their possession and are looking to sell, can utilise JDMarket to do so. 
+JDMarket is made for car enthusiasts in mind, but it is definitely not just restricted to them. Anyone that has a JDM in their possession and are looking to sell or buy, can utilise JDMarket to do so. 
 
 **Tech stack**
 
