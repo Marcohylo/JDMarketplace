@@ -48,27 +48,45 @@ JDMarket is made for car enthusiasts in mind, but it is definitely not just rest
 
 **Tech stack**
 
-TO BE ADDED
+Tech stacks that were used in the creation of this web app are listed below:
+
+- html/css (used to style the web app)
+- Heroku (used to deploy app)
+- GitHub (used for backup/version control)
+- Ruby on rails (framework used)
+- Postgresql (database system used)
+- Ruby (programming language utilised)
+- Stripe (used as payment system)
+- Amazon web services (storage for images)
 
 **User stories for your app**
 
-TO BE ADDED
+As an Unregistered User, I want to be able to easily sign up and make new accounts to buy or view car listings. 
+As a Buyer, I want to be able to view more car information/details after clicking on a specific car listing.
+As a Seller, I want to set up and have an easy to access form be available to me so that I can sell my products.
+As an Admin, I would like to be able to have access to an admin dashboard which allows me to change/edit whatever I please.
 
 **Wireframes for your app**
 
-TO BE ADDED
+Wireframes are attached below:
+
+![Wireframe](Images/Homepagewire.png)
+![Wireframe](Images/Create_Listingwire.png)
+![Wireframe](Images/Listingswire.png)
+![Wireframe](Images/showwire.png)
+
 
 **An ERD for your app**
 
-TO BE ADDED
+![ERD](Images/erd.png)
 
 **Explain the different high-level components (abstractions) in your app**
 
-TO BE ADDED
+Numerous gems were used in the creation of this Rails project. The Devise gem, was vital in abstracting user authentication within the project. Stripe and AWS was also used for the usability/function for JDMarket. Active record was also used, to allow users and admins a way to manipulate data within the model. 
 
 **Detail any third party services that your app will use**
 
-TO BE ADDED
+Third party services that were used includes Stripe and AWS. Stripe was very important in helping store and encrypt sensitive data which is required during a typical payment process by offloading liability on our end. AWS or Amazon Web Service was also used to host images for our site, which was a more secure way of storing data images.  
 
 **Describe your projects models in terms of the relationships (active record associations) they have with each other**
 
