@@ -90,18 +90,77 @@ Third party services that were used includes Stripe and AWS. Stripe was very imp
 
 **Describe your projects models in terms of the relationships (active record associations) they have with each other**
 
-TO BE ADDED
+Users have a one_to_many relationship with listings, since a user can have more than one listing while listings can only have one user. Meanwhile, categories also has a has_many relationship with listings, due to the fact that categories can have many listings while listings can only have two categories. 
 
 **Discuss the database relations to be implemented in your application**
 
-TO BE ADDED
+A user on JDMarket can create a profile and numerous listings, so both are foreign keys in the user model. In addition to this listings is a foreign key for the categories model, because it references categories to be able to create listings. 
 
 **Provide your database schema design**
 
-TO BE ADDED
+Categories schema:
+
+```
+create_table "categories", force: :cascade do |t|
+    t.string "car_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+```
+
+Listings schema:
+
+```
+create_table "listings", force: :cascade do |t|
+    t.string "car_make", null: false
+    t.bigint "price", null: false
+    t.string "colour", null: false
+    t.integer "model_year", null: false
+    t.string "engine", null: false
+    t.integer "top_speed", null: false
+    t.text "features", null: false
+    t.integer "transmission", null: false
+    t.text "condition", null: false
+    t.string "location", null: false
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "description"
+    t.bigint "user_id"
+    t.index ["category_id"], name: "index_listings_on_category_id"
+    t.index ["user_id"], name: "index_listings_on_user_id"
+  end
+```
+Users schema:
+```
+create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "role"
+    t.boolean "admin", default: false
+    t.string "name"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+```
 
 **Describe the way tasks are allocated and tracked in your project**
 
-TO BE ADDED
+Trelloboards were used to keep on track of tasks and for better time management. Attached are photos, dictating the usage of trelloboards. An attempt to simplify the board, in hopes to make it less complicated was done. There were 7 main parts in these 2 weeks of working on this project, and theyre all represented by one photo per part. 
+
+
+![Trelloboard](Images/trello1.png)
+![Trelloboard](Images/trello2.png)
+![Trelloboard](Images/trello3.png)
+![Trelloboard](Images/trello4.png)
+![Trelloboard](Images/trello5.png)
+![Trelloboard](Images/trello6.png)
+![Trelloboard](Images/trello7.png)
+
 
 
